@@ -1,0 +1,12 @@
+body {
+	text-align: center;
+	font-family: 'Verdana';
+}
+
+.row {
+	margin-top: 10%;
+}
+
+.row div {
+	margin-top: 2.5%;
+}
