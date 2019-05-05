@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import WebFont from 'webfontloader'
+import WebFont from 'webfontloader';
+import axios from 'axios';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../style/style.css';
 
@@ -14,6 +15,16 @@ class App extends Component {
 
 	componentDidMount() {
 
+	}
+
+	getPosts() {
+		axios.get('http://localhost:3000/api/v1/p')
+			.then(function (response) {
+				console.log(response.data)
+			})
+			.catch(function (error) {
+				console.log(error)
+			});
 	}
 
 	render() {
@@ -57,6 +68,12 @@ class App extends Component {
 									document.body.style.backgroundColor = '#9bc1bc';
 								}}>
 								9bc1bc
+							</button>
+						</div>
+						<div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+							<button className="btn"
+								onClick={this.getPosts}>
+								Get Posts
 							</button>
 						</div>
 					</div>
