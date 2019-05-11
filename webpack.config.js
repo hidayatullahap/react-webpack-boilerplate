@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const VENDOR_LIBS = ['react', 'react-dom'];
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 	entry: {
@@ -62,6 +63,7 @@ module.exports = {
 		}),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-		})
+		}),
+		new Dotenv()
 	]
 }
